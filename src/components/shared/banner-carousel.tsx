@@ -41,7 +41,7 @@ const BannerCarousel = ({ data }: Props) => {
                   item.backdrop_path
                 }
                 fill
-                className=" object-cover"
+                className=" object-cover object-top"
                 alt="banner-image"
               />
               <div className=" absolute flex flex-col items-center justify-center w-full bottom-24 z-20">

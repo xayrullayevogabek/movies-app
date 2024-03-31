@@ -1,7 +1,7 @@
 "use client";
 import Banner from "@/components/shared/banner";
 import Carousel from "../../../components/shared/carousel";
-import { getGenres, getMoviesByGenres } from "@/lib/api";
+import { fetchGenres, getMoviesByGenres } from "@/lib/api";
 import { useEffect, useState } from "react";
 import { AllMoviesByGenre, GenresTypes } from "@/types";
 import Streaming from "@/components/shared/streaming";
@@ -16,7 +16,7 @@ export default function Home() {
   useEffect(() => {
     const getMoviesGenres = async () => {
       try {
-        const genres = await getGenres();
+        const genres = await fetchGenres();
         setGenres(genres);
       } catch (error) {
         console.error(error);
@@ -38,7 +38,7 @@ export default function Home() {
         console.log(error);
       }
     };
-    if (genres.length > 0) {
+    if (genres?.length > 0) {
       getMovies();
     }
   }, [genres]);
@@ -47,7 +47,13 @@ export default function Home() {
     <>
       <Banner />
       <div className="container">
-        <Carousel data={allMoviesByGenre} />
+        <Carousel
+          data={allMoviesByGenre}
+          type="genre"
+          title="Explore our wide variety of categories"
+          desc="Whether you're looking for a comedy to make you laugh, a drama to
+            make you think, or a documentary to learn something new"
+        />
         <Streaming />
         <Faq />
       </div>

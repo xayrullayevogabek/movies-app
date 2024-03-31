@@ -18,7 +18,7 @@ const CardCategory = ({ data, genre }: Props) => {
               src={
                 process.env.NEXT_PUBLIC_TMDB_IMAGE_BASE_URL + item.poster_path
               }
-              className=" rounded-md object-cover"
+              className=" rounded-md object-cover object-top"
               alt="cart-image"
               fill
             />

@@ -4,7 +4,7 @@ import SubscriptionImage from "../../../public/images/subscription-img.png";
 
 const Subscription = () => {
   return (
-    <div className="mt-20 mb-20">
+    <div className="mt-28 mb-20">
       <div className=" relative">
         <Image
           className=" rounded-md"

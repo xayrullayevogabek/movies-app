@@ -4,7 +4,7 @@ import Image from "next/image";
 
 const Streaming = () => {
   return (
-    <div className="mt-20">
+    <div className=" mt-28">
       <div>
         <h1 className=" text-3xl">
           We Provide you streaming experience across various devices.
