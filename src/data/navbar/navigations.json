@@ -1,0 +1,14 @@
+[
+  {
+    "title": "Home",
+    "href": "/"
+  },
+  {
+    "title": "Movies & Shows",
+    "href": "/movies&shows"
+  },
+  {
+    "title": "Support",
+    "href": "/support"
+  }
+]

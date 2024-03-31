@@ -1,0 +1,42 @@
+[
+  {
+    "title": "Home",
+    "submenu": [
+      { "title": "Categories", "href": "#" },
+      { "title": "Devices", "href": "#" },
+      { "title": "Pricing", "href": "#" },
+      { "title": "Faqs", "href": "#" }
+    ]
+  },
+  {
+    "title": "Movies",
+    "submenu": [
+      { "title": "Genres", "href": "#" },
+      { "title": "Trending", "href": "#" },
+      { "title": "New Realease", "href": "#" },
+      { "title": "Popular", "href": "#" }
+    ]
+  },
+  {
+    "title": "Shows",
+    "submenu": [
+      { "title": "Genres", "href": "#" },
+      { "title": "Trending", "href": "#" },
+      { "title": "New Realease", "href": "#" },
+      { "title": "Popular", "href": "#" }
+    ]
+  },
+  {
+    "title": "Support",
+    "submenu": [{ "title": "Contact Us", "href": "#" }]
+  },
+  {
+    "title": "Subscription",
+    "submenu": [
+      { "title": "Plans", "href": "#" },
+      { "title": "Features", "href": "#" },
+      { "title": "Pricing", "href": "#" },
+      { "title": "Faqs", "href": "#" }
+    ]
+  }
+]
