@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination } from "swiper/modules";
+import { Pagination, Mousewheel } from "swiper/modules";
 import { AllMoviesByGenre, MovieType } from "@/types";
 import "swiper/css";
 import "swiper/css/pagination";
@@ -27,22 +27,23 @@ const Carousel = ({ data, title, desc, type }: Props) => {
       <Swiper
         slidesPerView={5}
         spaceBetween={30}
+        mousewheel={true}
         // pagination={{
         //   clickable: true,
         // }}
-        // modules={[]}
+        modules={[Mousewheel]}
         className="mySwiper mt-5 relative"
       >
         <div className=" h-full bg-gradient-to-l from-[#121212] to-transparent w-32 absolute top-0 right-0 z-10" />
         <div className=" h-full bg-gradient-to-r from-[#121212] to-transparent w-32 absolute top-0 left-0 z-10" />
         {type === "genre"
-          ? data.map((item: any) => (
-              <SwiperSlide>
+          ? data.map((item: any, index: number) => (
+              <SwiperSlide key={index}>
                 <CardCategory data={item.data} genre={item.genre} />
               </SwiperSlide>
             ))
-          : data.map((item: any) => (
-              <SwiperSlide>
+          : data.map((item: any, index: number) => (
+              <SwiperSlide key={index}>
                 <Card movie={item} />
               </SwiperSlide>
             ))}

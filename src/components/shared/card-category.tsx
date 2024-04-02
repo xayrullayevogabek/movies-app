@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 import CardImage from "@/assets/images/Image.png";
 import { GenresTypes, MovieType } from "@/types";
+import Loader from "./loader";
 
 interface Props {
   data: MovieType[];
@@ -9,16 +10,22 @@ interface Props {
 }
 
 const CardCategory = ({ data, genre }: Props) => {
+  const [isLoading, setIsLoading] = useState(true);
   return (
     <div className="bg-[#1a1a1a] rounded-xl p-6 box-border">
       <div className=" relative w-full h-full  grid grid-cols-2 gap-1">
-        {data.slice(0, 4).map((item) => (
-          <div className="relative w-[100%] h-24">
+        {data.slice(0, 4).map((item, index) => (
+          <div key={index} className="relative w-[100%] h-24">
             <Image
               src={
                 process.env.NEXT_PUBLIC_TMDB_IMAGE_BASE_URL + item.poster_path
               }
-              className=" rounded-md object-cover object-top"
+              onLoadingComplete={() => setIsLoading(false)}
+              className={` rounded-md object-cover object-top ${
+                isLoading
+                  ? "scale-110 blur-xl grayscale"
+                  : "scale-100 blur-0 grayscale-0"
+              }`}
               alt="cart-image"
               fill
             />

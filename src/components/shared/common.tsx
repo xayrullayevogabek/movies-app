@@ -9,6 +9,7 @@ import {
 } from "@/lib/api";
 import { CommonDataType, GenresTypes } from "@/types";
 import Carousel from "./carousel";
+import Loader from "./loader";
 
 const Common = ({ type = "movie" }: { type?: string }) => {
   const [genres, setGenres] = useState<GenresTypes[]>([]);
@@ -58,9 +59,21 @@ const Common = ({ type = "movie" }: { type?: string }) => {
       <div className=" absolute -top-4 p-1 rounded-md px-5 bg-[#E40000] text-white">
         {type == "tv" ? "Shows" : "Movies"}
       </div>
-      {data.map((item) => (
-        <Carousel title={item.title} data={item.data as any} type={item.type} />
-      ))}
+      {data.length > 0 ? (
+        data.map((item, index) => (
+          <Carousel
+            key={index}
+            title={item.title}
+            data={item.data as any}
+            type={item.type}
+          />
+        ))
+      ) : (
+        <div className=" relative mb-20 flex items-center">
+          <Loader />
+        </div>
+      )}
+      {/* {} */}
     </div>
   );
 };

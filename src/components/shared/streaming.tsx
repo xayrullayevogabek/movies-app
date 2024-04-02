@@ -17,8 +17,11 @@ const Streaming = () => {
         </p>
       </div>
       <div className=" grid grid-cols-1 md:grid-cols-2  lg:grid-cols-3 mt-10 gap-5">
-        {StreamingData.map((item) => (
-          <div className=" relative p-8 rounded-lg bg-[#0f0f0f] border border-[#1f1f1f]">
+        {StreamingData.map((item, index) => (
+          <div
+            key={index}
+            className=" relative p-8 rounded-lg bg-[#0f0f0f] border border-[#1f1f1f]"
+          >
             <div className="flex items-center gap-5">
               <div className=" w-14 h-14 rounded-lg bg-[#141414] border border-[#1f1f1f] flex items-center justify-center">
                 <Image

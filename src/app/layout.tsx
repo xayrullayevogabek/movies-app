@@ -4,6 +4,7 @@ import "./globals.css";
 import { Provider } from "@/provider";
 import Header from "@/components/shared/header";
 import Footer from "@/components/shared/footer";
+import BackToTop from "@/components/shared/back-to-top";
 
 const manrope = Manrope({ subsets: ["latin"] });
 
@@ -23,6 +24,7 @@ export default function RootLayout({
         <Provider defaultTheme="dark">
           <Header />
           {children}
+          <BackToTop />
           <Footer />
         </Provider>
       </body>

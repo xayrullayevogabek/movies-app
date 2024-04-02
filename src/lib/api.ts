@@ -59,3 +59,15 @@ export const getTopRatedMoviesAndShows = async (type: string) => {
     console.log(error);
   }
 };
+
+export const getMoviesAndShowsDetails = async (type: string, id: number) => {
+  try {
+    const { data } = await axios.get(
+      `${BASE_URL}/${type}/${id}?api_key=${API_KEY}&language=en-US`
+    );
+
+    return data && data
+  } catch (error) {
+    console.log(error);
+  }
+};
