@@ -1,14 +1,14 @@
 "use client";
 import React, { useState } from "react";
-import { MovieType } from "@/types";
+import { MovieType, ShowsType } from "@/types";
 import Image from "next/image";
 import Link from "next/link";
 
-const Card = ({ movie }: { movie: MovieType }) => {
+const Card = ({ movie, type }: { movie: MovieType; type: string }) => {
   const [isLoading, setIsLoading] = useState<boolean>(true);
- 
+
   return (
-    <Link href={""}>
+    <Link href={`/movies&shows/${type}/${movie.id}`}>
       <div className=" bg-[#1a1a1a] h-full p-4 rounded-md group cursor-pointer">
         <div className="relative w-full h-64">
           <Image

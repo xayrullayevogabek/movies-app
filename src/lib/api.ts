@@ -60,13 +60,25 @@ export const getTopRatedMoviesAndShows = async (type: string) => {
   }
 };
 
-export const getMoviesAndShowsDetails = async (type: string, id: number) => {
+export const getMoviesAndShowsDetails = async (type: string, id: string) => {
   try {
     const { data } = await axios.get(
       `${BASE_URL}/${type}/${id}?api_key=${API_KEY}&language=en-US`
     );
 
-    return data && data
+    return data && data;
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+export const getCasts = async (id: number, type: string) => {
+  try {
+    const { data } = await axios.get(
+      `${BASE_URL}/${type}/${id}/credits?api_key=${API_KEY}&language=en-US`
+    );
+
+    return data && data;
   } catch (error) {
     console.log(error);
   }

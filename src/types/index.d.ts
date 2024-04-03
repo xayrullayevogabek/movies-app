@@ -22,6 +22,7 @@ export interface MovieType {
   video: boolean;
   vote_average: number;
   vote_count: number;
+  media_type: string;
 }
 export interface AllMoviesByGenre {
   data: MovieType[];
@@ -30,7 +31,7 @@ export interface AllMoviesByGenre {
 
 export interface CommonDataType {
   title: string;
-  type: string;
+  genre: string;
   data: AllMoviesByGenre | MovieType[];
 }
 
@@ -65,23 +66,23 @@ export interface MovieDetailType {
 export interface ShowsType {
   adult: boolean;
   backdrop_path: string | null;
-  created_by: any[]; // Depending on the structure of the creators, you might define a type here
+  created_by: any[];
   episode_run_time: number[];
   first_air_date: string | null;
-  genres: any[]; // Depending on the structure of the genres, you might define a type here
+  genres: any[];
   homepage: string | null;
   id: number;
   in_production: boolean;
-  languages: any[]; // Depending on the structure of the languages, you might define a type here
+  languages: any[];
   last_air_date: string | null;
-  last_episode_to_air: any; // Depending on the structure of the episode, you might define a type here
+  last_episode_to_air: any;
   name: string;
-  next_episode_to_air: any; // Depending on the structure of the episode, you might define a type here
+  next_episode_to_air: any;
   networks: {
-      id: number;
-      logo_path: string | null;
-      name: string;
-      origin_country: string;
+    id: number;
+    logo_path: string | null;
+    name: string;
+    origin_country: string;
   }[];
   number_of_episodes: number;
   number_of_seasons: number;
@@ -91,17 +92,18 @@ export interface ShowsType {
   overview: string;
   popularity: number;
   poster_path: string | null;
-  production_companies: any[]; 
-  production_countries: any[]; 
+  production_companies: any[];
+  production_countries: any[];
+  media_type: string;
   seasons: {
-      air_date: string | null;
-      episode_count: number;
-      id: number;
-      name: string;
-      overview: string | null;
-      poster_path: string | null;
-      season_number: number;
-      vote_average: number;
+    air_date: string | null;
+    episode_count: number;
+    id: number;
+    name: string;
+    overview: string | null;
+    poster_path: string | null;
+    season_number: number;
+    vote_average: number;
   }[];
   spoken_languages: any[];
   status: string;

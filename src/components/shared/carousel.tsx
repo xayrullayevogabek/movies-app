@@ -12,10 +12,12 @@ interface Props {
   data: any;
   title?: string;
   desc?: string;
-  type?: string;
+  genre?: string;
+  type:string
 }
 
-const Carousel = ({ data, title, desc, type }: Props) => {
+const Carousel = ({ data, title, desc, genre, type }: Props) => {
+
   return (
     <div className=" mt-16">
       <div>
@@ -36,7 +38,7 @@ const Carousel = ({ data, title, desc, type }: Props) => {
       >
         <div className=" h-full bg-gradient-to-l from-[#121212] to-transparent w-32 absolute top-0 right-0 z-10" />
         <div className=" h-full bg-gradient-to-r from-[#121212] to-transparent w-32 absolute top-0 left-0 z-10" />
-        {type === "genre"
+        {genre === "genre"
           ? data.map((item: any, index: number) => (
               <SwiperSlide key={index}>
                 <CardCategory data={item.data} genre={item.genre} />
@@ -44,7 +46,7 @@ const Carousel = ({ data, title, desc, type }: Props) => {
             ))
           : data.map((item: any, index: number) => (
               <SwiperSlide key={index}>
-                <Card movie={item} />
+                <Card movie={item} type={type} />
               </SwiperSlide>
             ))}
       </Swiper>

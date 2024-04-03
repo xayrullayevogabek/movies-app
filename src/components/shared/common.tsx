@@ -38,10 +38,10 @@ const Common = ({ type = "movie" }: { type?: string }) => {
         ]);
 
         setData([
-          { title: "Our genres", type: "genre", data: allMovies },
-          { title: "Top Rated", type: "", data: topRated },
-          { title: "Popular", type: "", data: popular },
-          { title: "Trending", type: "", data: trending },
+          { title: "Our genres", genre: "genre", data: allMovies },
+          { title: "Top Rated", genre: "", data: topRated },
+          { title: "Popular", genre: "", data: popular },
+          { title: "Trending", genre: "", data: trending },
         ]);
       } catch (error) {
         console.log(error);
@@ -65,7 +65,8 @@ const Common = ({ type = "movie" }: { type?: string }) => {
             key={index}
             title={item.title}
             data={item.data as any}
-            type={item.type}
+            genre={item.genre}
+            type={type}
           />
         ))
       ) : (
@@ -73,7 +74,6 @@ const Common = ({ type = "movie" }: { type?: string }) => {
           <Loader />
         </div>
       )}
-      {/* {} */}
     </div>
   );
 };

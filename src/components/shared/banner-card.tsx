@@ -21,7 +21,7 @@ const BannerCard = ({ img, title, overview }: Props) => {
           fill
           className={` object-cover object-top rounded-lg ${
             isLoading
-              ? " scale-105 blur-xl grayscale"
+              ? " scale-105\ blur-xl grayscale"
               : "scale-100 blur-0 grayscale-0"
           }`}
           alt="banner-image"
